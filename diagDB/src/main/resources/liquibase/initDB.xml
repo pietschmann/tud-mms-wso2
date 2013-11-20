@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+    <changeSet author="rlu (generated)" id="1384938095864-1">
+        <createTable tableName="car">
+            <column name="id" type="BIGINT(19)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="buildDate" type="datetime"/>
+            <column name="plateNumber" type="VARCHAR(255)"/>
+            <column name="type_id" type="BIGINT(19)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-2">
+        <createTable tableName="cardata">
+            <column name="id" type="BIGINT(19)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="lastService_id" type="BIGINT(19)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-3">
+        <createTable tableName="carinformation">
+            <column name="id" type="BIGINT(19)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="car_id" type="BIGINT(19)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-4">
+        <createTable tableName="carinformation_cardata">
+            <column name="CarInformation_id" type="BIGINT(19)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="carDatas_id" type="BIGINT(19)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-5">
+        <createTable tableName="cartype">
+            <column name="id" type="BIGINT(19)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="brakeTemperatureRange_id" type="BIGINT(19)"/>
+            <column name="coolantRange_id" type="BIGINT(19)"/>
+            <column name="engineTemperatureRange_id" type="BIGINT(19)"/>
+            <column name="oilTemperaturRange_id" type="BIGINT(19)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-6">
+        <createTable tableName="errorcode">
+            <column name="id" type="BIGINT(19)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="code" type="BIGINT(19)"/>
+            <column name="decription" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-7">
+        <createTable tableName="gpsposition">
+            <column name="id" type="BIGINT(19)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="gkhigh" type="INT(10)"/>
+            <column name="gkright" type="INT(10)"/>
+            <column name="hight" type="DOUBLE"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-8">
+        <createTable tableName="inspection">
+            <column name="id" type="BIGINT(19)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="date" type="datetime"/>
+            <column name="km" type="BIGINT(19)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-9">
+        <createTable tableName="range">
+            <column name="id" type="BIGINT(19)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="lower" type="DOUBLE"/>
+            <column name="upper" type="DOUBLE"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-10">
+        <createTable tableName="telemetrydata">
+            <column name="id" type="BIGINT(19)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="avgSpeed" type="DOUBLE"/>
+            <column name="brakeTemperature" type="DOUBLE"/>
+            <column name="coolantTemperature" type="DOUBLE"/>
+            <column name="date" type="datetime"/>
+            <column name="distance" type="BIGINT(19)"/>
+            <column name="engineSpeed" type="BIGINT(19)"/>
+            <column name="engineTemperature" type="DOUBLE"/>
+            <column name="fanSpeed" type="BIGINT(19)"/>
+            <column name="oilLevel" type="DOUBLE"/>
+            <column name="oilPressure" type="DOUBLE"/>
+            <column name="oilTemperature" type="DOUBLE"/>
+            <column name="position_id" type="BIGINT(19)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-11">
+        <createTable tableName="telemetrydata_errorcode">
+            <column name="TelemetryData_id" type="BIGINT(19)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="errorCodes_id" type="BIGINT(19)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-12">
+        <createTable tableName="telemetrydata_tyre">
+            <column name="TelemetryData_id" type="BIGINT(19)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="tyrePressure_id" type="BIGINT(19)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-13">
+        <createTable tableName="tyre">
+            <column name="id" type="BIGINT(19)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="location" type="INT(10)"/>
+            <column name="pressure" type="DOUBLE"/>
+            <column name="temperature" type="DOUBLE"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-14">
+        <addPrimaryKey columnNames="id" constraintName="PRIMARY" tableName="car"/>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-15">
+        <addPrimaryKey columnNames="id" constraintName="PRIMARY" tableName="cardata"/>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-16">
+        <addPrimaryKey columnNames="id" constraintName="PRIMARY" tableName="carinformation"/>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-17">
+        <addPrimaryKey columnNames="CarInformation_id, carDatas_id" constraintName="PRIMARY" tableName="carinformation_cardata"/>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-18">
+        <addPrimaryKey columnNames="id" constraintName="PRIMARY" tableName="cartype"/>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-19">
+        <addPrimaryKey columnNames="id" constraintName="PRIMARY" tableName="errorcode"/>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-20">
+        <addPrimaryKey columnNames="id" constraintName="PRIMARY" tableName="gpsposition"/>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-21">
+        <addPrimaryKey columnNames="id" constraintName="PRIMARY" tableName="inspection"/>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-22">
+        <addPrimaryKey columnNames="id" constraintName="PRIMARY" tableName="range"/>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-23">
+        <addPrimaryKey columnNames="id" constraintName="PRIMARY" tableName="telemetrydata"/>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-24">
+        <addPrimaryKey columnNames="id" constraintName="PRIMARY" tableName="tyre"/>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-25">
+        <addForeignKeyConstraint baseColumnNames="type_id" baseTableName="car" constraintName="FK107B4A6025BC1" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="cartype"/>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-26">
+        <addForeignKeyConstraint baseColumnNames="TelemetryData_id" baseTableName="telemetrydata_errorcode" constraintName="FK2E2BFD9932010F0D" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="telemetrydata"/>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-27">
+        <addForeignKeyConstraint baseColumnNames="errorCodes_id" baseTableName="telemetrydata_errorcode" constraintName="FK2E2BFD99DF4B5B84" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="errorcode"/>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-28">
+        <addForeignKeyConstraint baseColumnNames="position_id" baseTableName="telemetrydata" constraintName="FK5C2832E33301BCB7" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="gpsposition"/>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-29">
+        <addForeignKeyConstraint baseColumnNames="id" baseTableName="telemetrydata" constraintName="FK5C2832E3D8D3E90C" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="cardata"/>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-30">
+        <addForeignKeyConstraint baseColumnNames="lastService_id" baseTableName="cardata" constraintName="FK842E717E6BB2883C" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="inspection"/>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-31">
+        <addForeignKeyConstraint baseColumnNames="brakeTemperatureRange_id" baseTableName="cartype" constraintName="FK8436110E3153F016" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="range"/>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-32">
+        <addForeignKeyConstraint baseColumnNames="engineTemperatureRange_id" baseTableName="cartype" constraintName="FK8436110E524C239F" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="range"/>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-33">
+        <addForeignKeyConstraint baseColumnNames="oilTemperaturRange_id" baseTableName="cartype" constraintName="FK8436110EEC38E110" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="range"/>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-34">
+        <addForeignKeyConstraint baseColumnNames="coolantRange_id" baseTableName="cartype" constraintName="FK8436110EF995C3AB" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="range"/>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-35">
+        <addForeignKeyConstraint baseColumnNames="car_id" baseTableName="carinformation" constraintName="FKC28CFCD88287950D" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="car"/>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-36">
+        <addForeignKeyConstraint baseColumnNames="TelemetryData_id" baseTableName="telemetrydata_tyre" constraintName="FKD7E5DF7432010F0D" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="telemetrydata"/>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-37">
+        <addForeignKeyConstraint baseColumnNames="tyrePressure_id" baseTableName="telemetrydata_tyre" constraintName="FKD7E5DF74D9374E2" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="tyre"/>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-38">
+        <addForeignKeyConstraint baseColumnNames="CarInformation_id" baseTableName="carinformation_cardata" constraintName="FKFE4CBD1726DD94E7" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="carinformation"/>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-39">
+        <addForeignKeyConstraint baseColumnNames="carDatas_id" baseTableName="carinformation_cardata" constraintName="FKFE4CBD176E430AD6" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="cardata"/>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-40">
+        <addUniqueConstraint columnNames="errorCodes_id" constraintName="UK_2E2BFD999347F1DC" deferrable="false" disabled="false" initiallyDeferred="false" tableName="telemetrydata_errorcode"/>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-41">
+        <addUniqueConstraint columnNames="tyrePressure_id" constraintName="UK_D7E5DF7460228EDD" deferrable="false" disabled="false" initiallyDeferred="false" tableName="telemetrydata_tyre"/>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1384938095864-42">
+        <addUniqueConstraint columnNames="carDatas_id" constraintName="UK_FE4CBD17956F2EE5" deferrable="false" disabled="false" initiallyDeferred="false" tableName="carinformation_cardata"/>
+    </changeSet>
+</databaseChangeLog>

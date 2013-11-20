@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<!--
+  ~ Created on ${date}
+  ~
+  ~  Copyright (c) 1999 - 2012 T-Systems Multimedia Solutions GmbH
+  ~  Riesaer Str. 5, D-01129 Dresden, Germany
+  ~  All rights reserved
+  -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>diagdb</artifactId>
+  <groupId>com.t_systems_mms.cardiag</groupId>
+  <version>0.1.0-SNAPSHOT</version>
+  <name>WS02 - Database Liquibase </name>
+
+  <properties>
+      <liquibase.init.file>liquibase/initDB.xml</liquibase.init.file>
+      <liquibase.update.file>liquibase/migrateDB.xml</liquibase.update.file>
+      <liquibase.driver>com.mysql.jdbc.Driver</liquibase.driver>
+<cardiag.db.url>jdbc:mysql://localhost/test</cardiag.db.url>
+<cardiag.db.username>root</cardiag.db.username> 
+<!--      <cardiag.db.password>${cardiag.db.username}</cardiag.db.password> -->
+  </properties>
+
+  <dependencies>
+      <dependency>
+          <groupId>mysql</groupId>
+          <artifactId>mysql-connector-java</artifactId>
+		  <version>5.1.12</version>
+      </dependency>
+  </dependencies>
+
+  <profiles>
+      <profile>
+          <id>initDB</id>          
+		  <build>
+              <plugins>
+                  <plugin>
+                      <groupId>org.liquibase</groupId>
+                      <artifactId>liquibase-maven-plugin</artifactId>
+                      <version>3.0.6</version>
+                      <executions>
+                          <execution>
+                              <id>drop_db</id>
+                              <phase>initialize</phase>
+                              <configuration>
+                                  <driver>${liquibase.driver}</driver>
+                                  <url>${cardiag.db.url}</url>
+                                  <username>${cardiag.db.username}</username>
+                                  <password>${cardiag.db.password}</password>
+                                  <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
+                              </configuration>
+                              <goals>
+                                  <goal>dropAll</goal>
+                              </goals>
+                          </execution>
+                          <execution>
+                              <id>init_db</id>
+                              <phase>compile</phase>
+                              <configuration>
+                                  <changeLogFile>${liquibase.init.file}</changeLogFile>
+                                  <driver>${liquibase.driver}</driver>
+                                  <url>${cardiag.db.url}</url>
+                                  <username>${cardiag.db.username}</username>
+                                  <password>${cardiag.db.password}</password>
+                                  <dropFirst>false</dropFirst>
+                                  <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
+                              </configuration>
+                              <goals>
+                                  <goal>update</goal>
+                              </goals>
+                          </execution>
+                      </executions>
+                  </plugin>
+              </plugins>
+          </build>
+      </profile>
+
+      <profile>
+          <id>migrateDB</id>
+          <build>
+              <plugins>                  
+                  <plugin>
+                      <groupId>org.liquibase</groupId>
+                      <artifactId>liquibase-maven-plugin</artifactId>
+                      <version>3.0.6</version>
+                      <executions>
+                          <execution>
+                              <id>migrate_db</id>
+                              <phase>compile</phase>
+                              <configuration>
+                                  <changeLogFile>${liquibase.update.file}</changeLogFile>
+                                  <driver>${liquibase.driver}</driver>
+                                  <url>${cardiag.db.url}</url>
+                                  <username>${cardiag.db.username}</username>
+                                  <password>${cardiag.db.password}</password>
+                                  <dropFirst>false</dropFirst>
+                                  <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
+                              </configuration>
+                              <goals>
+                                  <goal>update</goal>
+                              </goals>
+                          </execution>
+                      </executions>
+                  </plugin>
+              </plugins>
+          </build>
+      </profile>
+  </profiles>
+</project>
