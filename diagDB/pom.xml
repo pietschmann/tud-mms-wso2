@@ -18,9 +18,6 @@
       <liquibase.init.file>liquibase/initDB.xml</liquibase.init.file>
       <liquibase.update.file>liquibase/migrateDB.xml</liquibase.update.file>
       <liquibase.driver>com.mysql.jdbc.Driver</liquibase.driver>
-<cardiag.db.url>jdbc:mysql://localhost/test</cardiag.db.url>
-<cardiag.db.username>root</cardiag.db.username> 
-<!--      <cardiag.db.password>${cardiag.db.username}</cardiag.db.password> -->
   </properties>
 
   <dependencies>
