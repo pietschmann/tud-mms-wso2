@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd">
+    <changeSet author="rlu" id="disable_constraints">
+		<sql>SET FOREIGN_KEY_CHECKS=0</sql>
+	</changeSet>
+	<changeSet author="rlu (generated)" id="1385124917162-1">
+        <insert tableName="car">
+            <column name="id" valueNumeric="1"/>
+            <column name="buildDate" valueDate="2011-11-20 11:00:00.0"/>
+            <column name="plateNumber" value="DD-WS 02"/>
+            <column name="type_id" valueNumeric="1"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-2">
+        <insert tableName="car">
+            <column name="id" valueNumeric="2"/>
+            <column name="buildDate" valueDate="2001-02-20 03:00:00.0"/>
+            <column name="plateNumber" value="DD-CC 11"/>
+            <column name="type_id" valueNumeric="1"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-3">
+        <insert tableName="cardata">
+            <column name="id" valueNumeric="1001"/>
+            <column name="lastService_id" valueNumeric="1001"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-4">
+        <insert tableName="cardata">
+            <column name="id" valueNumeric="1002"/>
+            <column name="lastService_id" valueNumeric="1002"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-5">
+        <insert tableName="cardata">
+            <column name="id" valueNumeric="1003"/>
+            <column name="lastService_id" valueNumeric="1003"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-6">
+        <insert tableName="cardata">
+            <column name="id" valueNumeric="2001"/>
+            <column name="lastService_id" valueNumeric="2001"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-7">
+        <insert tableName="carinformation">
+            <column name="id" valueNumeric="1001"/>
+            <column name="car_id" valueNumeric="1"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-8">
+        <insert tableName="carinformation">
+            <column name="id" valueNumeric="1002"/>
+            <column name="car_id" valueNumeric="1"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-9">
+        <insert tableName="carinformation">
+            <column name="id" valueNumeric="1003"/>
+            <column name="car_id" valueNumeric="1"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-10">
+        <insert tableName="carinformation">
+            <column name="id" valueNumeric="2001"/>
+            <column name="car_id" valueNumeric="2"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-11">
+        <insert tableName="carinformation_cardata">
+            <column name="CarInformation_id" valueNumeric="1001"/>
+            <column name="carDatas_id" valueNumeric="1001"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-12">
+        <insert tableName="carinformation_cardata">
+            <column name="CarInformation_id" valueNumeric="1002"/>
+            <column name="carDatas_id" valueNumeric="1002"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-13">
+        <insert tableName="carinformation_cardata">
+            <column name="CarInformation_id" valueNumeric="1003"/>
+            <column name="carDatas_id" valueNumeric="1003"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-14">
+        <insert tableName="carinformation_cardata">
+            <column name="CarInformation_id" valueNumeric="2001"/>
+            <column name="carDatas_id" valueNumeric="2001"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-15">
+        <insert tableName="cartype">
+            <column name="id" valueNumeric="1"/>
+            <column name="brakeTemperatureRange_id" valueNumeric="11"/>
+            <column name="coolantRange_id" valueNumeric="12"/>
+            <column name="engineTemperatureRange_id" valueNumeric="13"/>
+            <column name="oilTemperaturRange_id" valueNumeric="14"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-16">
+        <insert tableName="errorcode">
+            <column name="id" valueNumeric="1"/>
+            <column name="code" valueNumeric="10001"/>
+            <column name="decription" value="verify Brakefluid"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-17">
+        <insert tableName="errorcode">
+            <column name="id" valueNumeric="2"/>
+            <column name="code" valueNumeric="10002"/>
+            <column name="decription" value="Brake used up"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-18">
+        <insert tableName="errorcode">
+            <column name="id" valueNumeric="3"/>
+            <column name="code" valueNumeric="10003"/>
+            <column name="decription" value="Brakes overheaten"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-19">
+        <insert tableName="errorcode">
+            <column name="id" valueNumeric="4"/>
+            <column name="code" valueNumeric="20001"/>
+            <column name="decription" value="verify oil level"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-20">
+        <insert tableName="errorcode">
+            <column name="id" valueNumeric="5"/>
+            <column name="code" valueNumeric="20002"/>
+            <column name="decription" value="oil change required"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-21">
+        <insert tableName="errorcode">
+            <column name="id" valueNumeric="6"/>
+            <column name="code" valueNumeric="20003"/>
+            <column name="decription" value="exhaust overheaten"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-22">
+        <insert tableName="errorcode">
+            <column name="id" valueNumeric="7"/>
+            <column name="code" valueNumeric="20004"/>
+            <column name="decription" value="lamda sensor defect"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-23">
+        <insert tableName="errorcode">
+            <column name="id" valueNumeric="8"/>
+            <column name="code" valueNumeric="30001"/>
+            <column name="decription" value="front light defect"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-24">
+        <insert tableName="errorcode">
+            <column name="id" valueNumeric="9"/>
+            <column name="code" valueNumeric="30002"/>
+            <column name="decription" value="low battery"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-25">
+        <insert tableName="inspection">
+            <column name="id" valueNumeric="1001"/>
+            <column name="date" valueDate="2011-11-20 11:00:00.0"/>
+            <column name="km" valueNumeric="0"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-26">
+        <insert tableName="inspection">
+            <column name="id" valueNumeric="1002"/>
+            <column name="date" valueDate="2029-06-20 12:00:00.0"/>
+            <column name="km" valueNumeric="15001"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-27">
+        <insert tableName="inspection">
+            <column name="id" valueNumeric="1003"/>
+            <column name="date" valueDate="2007-03-20 13:00:00.0"/>
+            <column name="km" valueNumeric="31027"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-28">
+        <insert tableName="inspection">
+            <column name="id" valueNumeric="2001"/>
+            <column name="date" valueDate="2001-05-20 12:00:00.0"/>
+            <column name="km" valueNumeric="10242"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-29">
+        <insert tableName="range">
+            <column name="id" valueNumeric="11"/>
+            <column name="lower" valueNumeric="10.0"/>
+            <column name="upper" valueNumeric="80.0"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-30">
+        <insert tableName="range">
+            <column name="id" valueNumeric="12"/>
+            <column name="lower" valueNumeric="25.0"/>
+            <column name="upper" valueNumeric="80.0"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-31">
+        <insert tableName="range">
+            <column name="id" valueNumeric="13"/>
+            <column name="lower" valueNumeric="60.0"/>
+            <column name="upper" valueNumeric="115.0"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-32">
+        <insert tableName="range">
+            <column name="id" valueNumeric="14"/>
+            <column name="lower" valueNumeric="65.0"/>
+            <column name="upper" valueNumeric="130.0"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-33">
+        <insert tableName="telemetrydata">
+            <column name="id" valueNumeric="1001"/>
+            <column name="avgSpeed" valueNumeric="45.0"/>
+            <column name="brakeTemperature" valueNumeric="24.0"/>
+            <column name="coolantTemperature" valueNumeric="60.0"/>
+            <column name="date" valueDate="2011-11-20 01:00:00.0"/>
+            <column name="distance" valueNumeric="2"/>
+            <column name="engineSpeed" valueNumeric="2103"/>
+            <column name="engineTemperature" valueNumeric="45.0"/>
+            <column name="fanSpeed" valueNumeric="30"/>
+            <column name="oilLevel" valueNumeric="3.5"/>
+            <column name="oilPressure" valueNumeric="1.0"/>
+            <column name="oilTemperature" valueNumeric="30.0"/>
+            <column name="position_id"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-34">
+        <insert tableName="telemetrydata">
+            <column name="id" valueNumeric="1002"/>
+            <column name="avgSpeed" valueNumeric="46.0"/>
+            <column name="brakeTemperature" valueNumeric="25.0"/>
+            <column name="coolantTemperature" valueNumeric="55.0"/>
+            <column name="date" valueDate="2018-11-20 01:00:00.0"/>
+            <column name="distance" valueNumeric="120"/>
+            <column name="engineSpeed" valueNumeric="2234"/>
+            <column name="engineTemperature" valueNumeric="75.0"/>
+            <column name="fanSpeed" valueNumeric="30"/>
+            <column name="oilLevel" valueNumeric="3.5"/>
+            <column name="oilPressure" valueNumeric="1.1"/>
+            <column name="oilTemperature" valueNumeric="80.0"/>
+            <column name="position_id"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-35">
+        <insert tableName="telemetrydata">
+            <column name="id" valueNumeric="1003"/>
+            <column name="avgSpeed" valueNumeric="45.0"/>
+            <column name="brakeTemperature" valueNumeric="32.0"/>
+            <column name="coolantTemperature" valueNumeric="58.0"/>
+            <column name="date" valueDate="2012-12-20 01:00:00.0"/>
+            <column name="distance" valueNumeric="250"/>
+            <column name="engineSpeed" valueNumeric="2300"/>
+            <column name="engineTemperature" valueNumeric="50.0"/>
+            <column name="fanSpeed" valueNumeric="45"/>
+            <column name="oilLevel" valueNumeric="3.4"/>
+            <column name="oilPressure" valueNumeric="0.9"/>
+            <column name="oilTemperature" valueNumeric="62.0"/>
+            <column name="position_id"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-36">
+        <insert tableName="telemetrydata">
+            <column name="id" valueNumeric="2001"/>
+            <column name="avgSpeed" valueNumeric="65.0"/>
+            <column name="brakeTemperature" valueNumeric="31.0"/>
+            <column name="coolantTemperature" valueNumeric="42.0"/>
+            <column name="date" valueDate="2030-06-20 01:00:00.0"/>
+            <column name="distance" valueNumeric="42011"/>
+            <column name="engineSpeed" valueNumeric="3100"/>
+            <column name="engineTemperature" valueNumeric="85.0"/>
+            <column name="fanSpeed" valueNumeric="32"/>
+            <column name="oilLevel" valueNumeric="2.0"/>
+            <column name="oilPressure" valueNumeric="0.9"/>
+            <column name="oilTemperature" valueNumeric="91.0"/>
+            <column name="position_id"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-37">
+        <insert tableName="telemetrydata_errorcode">
+            <column name="TelemetryData_id" valueNumeric="1001"/>
+            <column name="errorCodes_id" valueNumeric="8"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-38">
+        <insert tableName="telemetrydata_errorcode">
+            <column name="TelemetryData_id" valueNumeric="1003"/>
+            <column name="errorCodes_id" valueNumeric="3"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-39">
+        <insert tableName="telemetrydata_errorcode">
+            <column name="TelemetryData_id" valueNumeric="1003"/>
+            <column name="errorCodes_id" valueNumeric="9"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-40">
+        <insert tableName="telemetrydata_errorcode">
+            <column name="TelemetryData_id" valueNumeric="2001"/>
+            <column name="errorCodes_id" valueNumeric="4"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-41">
+        <insert tableName="telemetrydata_tyre">
+            <column name="TelemetryData_id" valueNumeric="1001"/>
+            <column name="tyrePressure_id" valueNumeric="11"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-42">
+        <insert tableName="telemetrydata_tyre">
+            <column name="TelemetryData_id" valueNumeric="1001"/>
+            <column name="tyrePressure_id" valueNumeric="12"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-43">
+        <insert tableName="telemetrydata_tyre">
+            <column name="TelemetryData_id" valueNumeric="1001"/>
+            <column name="tyrePressure_id" valueNumeric="13"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-44">
+        <insert tableName="telemetrydata_tyre">
+            <column name="TelemetryData_id" valueNumeric="1001"/>
+            <column name="tyrePressure_id" valueNumeric="14"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-45">
+        <insert tableName="tyre">
+            <column name="id" valueNumeric="11"/>
+            <column name="location" valueNumeric="1"/>
+            <column name="pressure" valueNumeric="2.1"/>
+            <column name="temperature" valueNumeric="35.0"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-46">
+        <insert tableName="tyre">
+            <column name="id" valueNumeric="12"/>
+            <column name="location" valueNumeric="2"/>
+            <column name="pressure" valueNumeric="2.0"/>
+            <column name="temperature" valueNumeric="37.0"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-47">
+        <insert tableName="tyre">
+            <column name="id" valueNumeric="13"/>
+            <column name="location" valueNumeric="3"/>
+            <column name="pressure" valueNumeric="2.0"/>
+            <column name="temperature" valueNumeric="36.0"/>
+        </insert>
+    </changeSet>
+    <changeSet author="rlu (generated)" id="1385124917162-48">
+        <insert tableName="tyre">
+            <column name="id" valueNumeric="14"/>
+            <column name="location" valueNumeric="4"/>
+            <column name="pressure" valueNumeric="1.9"/>
+            <column name="temperature" valueNumeric="37.0"/>
+        </insert>
+    </changeSet>
+	<changeSet author="rlu" id="enabel_constraints">
+		<sql>SET FOREIGN_KEY_CHECKS=1</sql>
+	</changeSet>
+	
+</databaseChangeLog>
