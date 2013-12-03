@@ -6,6 +6,7 @@
 
     <include file="initDB.xml" relativeToChangelogFile="true"/>
     <include file="testdata/test_data.xml" relativeToChangelogFile="true"/>
+    <include file="testdata/fix_test.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>
 
