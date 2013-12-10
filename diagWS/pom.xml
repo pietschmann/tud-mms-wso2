@@ -7,6 +7,11 @@
     <groupId>com.t_systems_mms.cardiag</groupId>
     <artifactId>diagws</artifactId>
     <version>0.1.0-SNAPSHOT</version>
+    <name>WS02 - Webservice Stub</name>
+
+    <properties>
+        <wsdl.dir>src/main/wsdl</wsdl.dir>
+    </properties>
 
     <build>
         <plugins>
@@ -23,7 +28,7 @@
                         </goals>
                         <configuration>
                             <packageName>com.t_systems_mms.car.service</packageName>
-                            <wsdlFile>src/main/wsdl/CarService.wsdl</wsdlFile>
+                            <wsdlFile>${wsdl.dir}/CarService.wsdl</wsdlFile>
                             <databindingName>xmlbeans</databindingName>
                             <generateServerSide>true</generateServerSide>
                         </configuration>
@@ -34,14 +39,41 @@
                             <goal>wsdl2code</goal>
                         </goals>
                         <configuration>
-                            <packageName>com.foo.myservice</packageName>
-                            <wsdlFile>src/main/wsdl/DiagService.wsdl</wsdlFile>
+                            <packageName>com.t_systems_mms.car.service</packageName>
+                            <wsdlFile>${wsdl.dir}/DiagService.wsdl</wsdlFile>
                             <databindingName>xmlbeans</databindingName>
                             <generateServerSide>true</generateServerSide>
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-wsdls</id>
+                        <goals>
+                            <goal>attach-artifact</goal>
+                        </goals>
+                        <configuration>
+                            <artifacts>
+                                <artifact>
+                                    <file>${project.basedir}/${wsdl.dir}/CarService.wsdl</file>
+                                    <classifier>CarService</classifier>
+                                    <type>wsdl</type>
+                                </artifact>
+                                <artifact>
+                                    <file>${project.basedir}/${wsdl.dir}/DiagService.wsdl</file>
+                                    <classifier>DiagService</classifier>
+                                    <type>wsdl</type>
+                                </artifact>
+                            </artifacts>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
         </plugins>
     </build>
     <dependencies>
