@@ -12,6 +12,7 @@
     <modules>
         <module>diagDB</module>
         <module>diagWS</module>
+        <module>diagWSClient</module>
       <!--  <module>teleSensor</module> -->
     </modules>
 
